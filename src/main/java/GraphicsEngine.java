@@ -271,8 +271,8 @@ public class GraphicsEngine extends JPanel implements Runnable {
 
                 break;
             case GAME_SCREEN:
-//                helpGUI(g2);
                 gameScreen(g2);
+                helpGUI(g2);
 
                 break;
             case BUY_SCREEN:
@@ -832,6 +832,18 @@ public class GraphicsEngine extends JPanel implements Runnable {
         g2.drawString("the game. They can do this through the construction of ships," +
                 " upgrades, and colonization to fight until only one player remains.",
                 WINDOW_OFFSET + DRAW_HELP, WINDOW_OFFSET + DRAW_HELP_OFFSETX13);
+    }
+
+    private void creditsGUI(Graphics2D g2) {
+        g2.setColor(Color.white);
+
+        Rectangle window = new Rectangle(WINDOW_OFFSET, WINDOW_OFFSET, WINDOW_WIDTH,
+                WINDOW_HEIGHT);
+
+        g2.draw(window);
+        g2.setColor(Color.black);
+        g2.fill(window);
+        g2.setColor(Color.white);
     }
 
     private void processAnnex(Graphics2D g2) {

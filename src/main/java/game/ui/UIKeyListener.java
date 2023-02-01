@@ -67,6 +67,13 @@ public class UIKeyListener implements KeyListener {
         else if (keyCode == KeyEvent.VK_DOWN) GameManager.setKeyState(GameState.KEY_DOWN);
         else if (keyCode == KeyEvent.VK_LEFT) GameManager.setKeyState(GameState.KEY_LEFT);
         else if (keyCode == KeyEvent.VK_RIGHT) GameManager.setKeyState(GameState.KEY_RIGHT);
+        else if (keyCode == KeyEvent.VK_C) {
+            if (GameManager.getScreenState() == ScreenState.CREDITS_SCREEN) {
+                GameManager.setScreenState(ScreenState.START_SCREEN);
+            } else if (GameManager.getScreenState() == ScreenState.START_SCREEN) {
+                GameManager.setScreenState(ScreenState.CREDITS_SCREEN);
+            }
+        }
     }
 
     /**

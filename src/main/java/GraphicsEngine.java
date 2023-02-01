@@ -269,10 +269,12 @@ public class GraphicsEngine extends JPanel implements Runnable {
                 drawButtons(g2);
                 initializeGame(g2);
 
+//                creditsGUI(g2);
+
                 break;
             case GAME_SCREEN:
                 gameScreen(g2);
-                helpGUI(g2);
+//                helpGUI(g2);
 
                 break;
             case BUY_SCREEN:
@@ -283,6 +285,13 @@ public class GraphicsEngine extends JPanel implements Runnable {
                 break;
             case TECH_SCREEN:
                 techGUI(g2);
+
+                break;
+            case CREDITS_SCREEN:
+                g2.drawImage(startScreenBackground, 0, 0, this);
+                creditsGUI(g2);
+
+                break;
         }
 
         g2.dispose();
@@ -844,6 +853,16 @@ public class GraphicsEngine extends JPanel implements Runnable {
         g2.setColor(Color.black);
         g2.fill(window);
         g2.setColor(Color.white);
+
+        g2.drawString("Thank you for playing VinVeli :D", WINDOW_OFFSET + 5, WINDOW_OFFSET + 15);
+
+        g2.drawString("Credits: ", WINDOW_OFFSET + 5, WINDOW_OFFSET + 45);
+
+        g2.drawString("Lead Developer: Mithun Balasubramanian", WINDOW_OFFSET + 5, WINDOW_OFFSET + 60);
+        g2.drawString("Developers: Sree Bommisetty & Nikhil Venkatachalam", WINDOW_OFFSET + 5, WINDOW_OFFSET + 75);
+
+        g2.drawString("All art asset attributions can be found at: ", WINDOW_OFFSET + 5, WINDOW_OFFSET + 105);
+
     }
 
     private void processAnnex(Graphics2D g2) {
